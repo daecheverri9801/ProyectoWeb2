@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wicked 3D Print</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/shop.css">
+    <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/images/icon.png">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body fixed-top" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="/images/wicked.png" alt="Logo" width="80" height="24" class="d-inline-block align-text-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav nav-tabs navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">HOME</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="/modelos?patreon=Wicked">WICKED</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/modelos?patreon=B3dserk">B3DSERK</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/modelos?patreon=Star_Wars">STAR WARS</a>
+                    </li> -->
+                    <ul class="navbar-nav">
+                        <% categorias.forEach(categoria=> { %>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/modelos?patreon=<%= categoria.categoria %>">
+                                    <%= categoria.categoria %>
+                                </a>
+                            </li>
+                            <% }) %>
+                    </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/aboutus">ABOUT US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/auth/login">LOGIN</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 col-bg col-1">
+                <a href="/modelos?patreon=B3DSERK" class="btn btn-primary btn-custom btn-custom-1">B3DSERK</a>
+            </div>
+            <div class="col-md-4 col-bg col-3">
+                <a href="/modelos?patreon=STARWARS" class="btn btn-primary btn-custom btn-custom-3">STAR WARS</a>
+            </div>
+            <div class="col-md-4 col-bg col-2">
+                <a href="/modelos?patreon=WICKED" class="btn btn-primary btn-custom btn-custom-2">WICKED</a>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <% categorias.forEach((categoria, index)=> { %>
+                <div class="col-md-4 col-bg col-<%= index + 1 %>">
+                    <a href="/modelos?patreon=<%= categoria.categoria %>"
+                        class="btn btn-primary btn-custom btn-custom-<%= index + 1 %>">
+                        <img src="<%= categoria.imagen %>" alt="<%= categoria.nombre %>" class="img-fluid">
+                        <%= categoria.categoria %>
+                    </a>
+                </div>
+                <% }); %>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+.navbar,
+.navbar-brand,
+.nav-link {
+    font-family: "Parkinsans", serif;
+    font-weight: 400;
+}
+
+.nav-link {
+    color: rgb(255, 0, 0) !important;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}

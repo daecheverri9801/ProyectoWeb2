@@ -1,0 +1,140 @@
+.col-bg {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.col-2 {
+    position: relative;
+    background-image: url('../images/B3dserkMenu.jpg');
+}
+
+.col-1 {
+    position: relative;
+    background-image: url('../images/WickedMenu.jpg');
+}
+
+.col-3 {
+    position: relative;
+    background-image: url('../images/SWMenu.jpg');
+}
+
+.col-1::before,
+.col-2::before,
+.col-3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    /* Transición para cambiar el color de fondo y opacidad */
+}
+
+.col-1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(180, 70, 70, 0.233);
+    z-index: 1;
+}
+
+.col-2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(63, 11, 11, 0.473);
+    z-index: 1;
+}
+
+.col-3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(204, 188, 41, 0.397);
+    z-index: 1;
+}
+
+.col-1:hover::before,
+.col-2:hover::before,
+.col-3:hover::before {
+    opacity: 0;
+}
+
+.btn-custom-1,
+.btn-custom-2,
+.btn-custom-3 {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+}
+
+@media (max-width: 768px) {
+    .col-bg {
+        height: 60vh;
+    }
+}
+
+.btn-custom {
+    font-family: "Parkinsans", serif;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border-radius: 10px;
+}
+
+.btn-custom-1:hover {
+    background-color: rgba(168, 62, 62, 0.8);
+    box-shadow: 0 0 20px rgba(121, 47, 47, 0.6);
+    transform: scale(1.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-custom-2:hover {
+    background-color: rgba(255, 0, 0, 0.8);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+    transform: scale(1.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-custom-3:hover {
+    background-color: rgba(204, 188, 41, 0.836);
+    box-shadow: 0 0 20px rgba(204, 188, 41, 0.836);
+    transform: scale(1.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-custom:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.btn-custom {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
