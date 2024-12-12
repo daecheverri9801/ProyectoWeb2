@@ -43,7 +43,8 @@
                     <ul class="navbar-nav">
                         <% categorias.forEach(categoria=> { %>
                             <li class="nav-item">
-                                <a class="nav-link active" href="/modelos?patreon=<%= categoria.categoria %>">
+                                <a class="nav-link active" style="background-color: <%= categoria.color %>;"
+                                    href="/modelos?patreon=<%= categoria.categoria %>">
                                     <%= categoria.categoria %>
                                 </a>
                             </li>
@@ -77,8 +78,8 @@
                                     <%= modelo.Medida %><br>
                                         <strong><i class="bi bi-aspect-ratio"></i> Escala:</strong>
                                         <%= modelo.Escala %><br>
-                                            <strong><i class="bi bi-currency-dollar"></i> Precio:</strong> $<%=
-                                                modelo.Precio %>
+                                            <strong><i class="bi bi-currency-dollar"></i> Precio:</strong>
+                                            $<%= modelo.Precio %>
                             </p>
                         </div>
                         <div class="card-footer d-flex justify-content-center align-items-center">
